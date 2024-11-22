@@ -20,4 +20,4 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Check clippy
-        run: cargo clippy
+        run: cargo clippy -- -D warnings
