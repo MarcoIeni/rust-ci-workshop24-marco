@@ -3,6 +3,9 @@ name: CI # Continuous Integration
 on:
   pull_request:
 
+env:
+  CARGO_TERM_COLOR: always
+
 jobs:
   fmt:
     runs-on: ubuntu-24.04
