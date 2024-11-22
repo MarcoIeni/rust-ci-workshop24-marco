@@ -6,7 +6,7 @@ pub struct Point {
     y: i64,
 }
 
-/// Adds two [`MyPoint`]s together.
+/// Adds two [`Point`]s together.
 pub fn add() {
     let var1 = Some(1);
     if let Some(num) = var1 {
