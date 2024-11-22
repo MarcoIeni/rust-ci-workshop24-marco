@@ -6,3 +6,4 @@ license = "MIT"
 description = "A simple project to demonstrate GitHub Settings and CI/CD"
 
 [dependencies]
+serde = "1.0.215"
