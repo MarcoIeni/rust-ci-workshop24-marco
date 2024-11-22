@@ -4,3 +4,11 @@ pub fn add() {
         println!("{num}")
     }
 }
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn small_test() {
+        panic!("hello");
+    }
+}
