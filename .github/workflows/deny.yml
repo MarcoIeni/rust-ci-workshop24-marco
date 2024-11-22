@@ -2,6 +2,7 @@ name: Deny
 
 on:
   pull_request:
+  merge_group:
   schedule:
     # Runs at 00:00 UTC everyday
     - cron: "0 0 * * *"
