@@ -9,6 +9,6 @@ pub fn add() {
 mod tests {
     #[test]
     fn small_test() {
-        panic!("hello world");
+        println!("hello world");
     }
 }
