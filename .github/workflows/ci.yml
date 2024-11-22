@@ -3,11 +3,46 @@ name: CI # Continuous Integration
 on:
   pull_request:
 
+env:
+  CARGO_TERM_COLOR: always
+
 jobs:
   fmt:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Update Rust toolchain
+        uses: actions-rust-lang/setup-rust-toolchain@v1
       - name: Check format
         run: cargo fmt --check --all
+
+  clippy:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Check clippy
+        run: cargo clippy -- -D warnings
+
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Update Rust toolchain
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+      - name: Run test
+        run: cargo test
+
+  doc:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Update Rust toolchain
+        uses: actions-rust-lang/setup-rust-toolchain@v1
+      - name: Check docs
+        run: cargo doc
+        env:
+          RUSTDOCFLAGS: -D warnings
