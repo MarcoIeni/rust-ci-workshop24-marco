@@ -2,5 +2,7 @@
 name = "rust-ci-workshop24-marco"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+description = "A simple project to demonstrate GitHub Settings and CI/CD"
 
 [dependencies]
